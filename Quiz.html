@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;600;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML5 Quiz</title>
+  <style>
+    body {
+      font-family: "Manjari", 'Segoe UI', Sans-serif;
+      background: #E1F3F5;
+      padding: 40px;
+    }
+
+    .quiz-container {
+      margin: 0 auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 100%;
+      font-size: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    label:hover {
+      background: #eef3ff;
+      border-color: #aac4ff;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: #d7eb61;
+      color: black;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #1e3b5e;
+      color: white;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .pretty-input {
+      width: 400px;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 26px;
+      transition: border-color 0.3s ease; 
+    }
+
+    .pretty-input:focus {
+      border-color: #007bff; 
+    }
+
+    .pretty-input::placeholder {
+      color: #aaa;
+    }
+  </style>
+</head>
+<header style="background-color:#1e3b5e; color:white; padding:20px; text-align:center; font-family:'Manjari', sans-serif; font-size:28px; border-radius:10px; margin-bottom:30px;">
+  🌟 Diagnóstico Energético 2026: Año del Caballo de Fuego 🌟
+</header>
+<body>
+  <div class="quiz-container" id = "whole">
+    <h2>Descubre la energía que predominará en tu 2026 (Año del Caballo de Fuego)</h2>
+    <p>La astrología china confirma que 2026 será el Año del Caballo de Fuego, que como se ve a simple vista es un signo asociado con el elemento Fuego. Esto significa una energía vibrante y apasionada contrastando con la introspección del año anterior. Con este test descubrirás cuál de las cuatro energías primarias de 2026 resonará más contigo.</p>
+    
+    <p>Responde con sinceridad y descubre cómo aprovechar esta poderosa energía al máximo.</p>
+    <form id="quizForm">
+      <div class="question">
+        <p>Pregunta 1: Ingresa tu correo electrónico para continuar con el test.</p>
+        <input type="text" id = "email" class = "pretty-input"/>
+        
+      </div> 
+
+      <div class="question">
+        <p>Pregunta 2: ¿En qué estación del año naciste?
+        (si no estás seguro, ve la referencia)</p>
+        <label><input type="radio" name="q1" value="a" />A) Invierno ❄️ (Dic - Ene - Feb) </label>
+        <label><input type="radio" name="q1" value="b" />B) Primavera 🌸 (Mar - Abr - May) </label>
+        <label><input type="radio" name="q1" value="c" />C) Verano ☀️ (Jun - Jul - Ago) </label>
+        <label><input type="radio" name="q1" value="d" />D) Otoño 🍂 (Sep - Oct - Nov) </label>
+      </div>
+
+      <div class="question">
+        <p>Pregunta 3: ¿Cómo describirías la intensidad de los últimos 3 meses?</p>
+        <label><input type="radio" name="q2" value="a" />A) Ha crecido mi agenda y las oportunidades</label>
+        <label><input type="radio" name="q2" value="b" />B) Todo se ha movido, nada está igual</label>
+        <label><input type="radio" name="q2" value="c" />C) He sentido la necesidad de bajar revoluciones</label>
+        <label><input type="radio" name="q2" value="d" />D) Los retos se han multiplicado</label>
+      </div>
+
+      <div class="question">
+        <p>Pregunta 4: Cuando surgen imprevistos, tu reacción espontánea suele ser:</p>
+        <label><input type="radio" name="q3" value="a" />A) Aprovechar la ocasión y conectarme con más gente</label>
+        <label><input type="radio" name="q3" value="b" />B) Ajustarme rápido y re-plantear mis planes</label>
+        <label><input type="radio" name="q3" value="c" />C) Pausar, observar y decidir con calma</label>
+        <label><input type="radio" name="q3" value="d" />D) Tomar acción y demostrar de qué estoy hecho(a)</label>
+      </div>
+
+      <div class="question">
+        <p>Pregunta 5: Tu mayor logro en 2025 te dejó la sensación de:</p>
+        <label><input type="radio" name="q4" value="a" />A) Haber abierto puertas nuevas</label>
+        <label><input type="radio" name="q4" value="b" />B) Haberte reinventado por dentro</label>
+        <label><input type="radio" name="q4" value="c" />C) Haber fortalecido tu bienestar y relaciones cercanas</label>
+        <label><input type="radio" name="q4" value="d" />D) Haber superado una prueba dura que te hizo crecer</label>
+      </div>
+
+      <div class="question">
+        <p>Pregunta 6: ¿Qué escenario te genera más estrés hoy?</p>
+        <label><input type="radio" name="q5" value="a" />A) Quedarte estancado y no avanzar</label>
+        <label><input type="radio" name="q5" value="b" />B) No saber qué dirección tomar</label>
+        <label><input type="radio" name="q5" value="c" />C) Perder la estabilidad que tanto costó</label>
+        <label><input type="radio" name="q5" value="d" />D) No contar con desafíos que te prueben</label>
+      </div>
+
+      <div class="question">
+        <p>Pregunta 7: Para sentirte en equilibrio necesitas…</p>
+        <label><input type="radio" name="q6" value="a" />A) Proyectos con meta clara y expansión constante</label>
+        <label><input type="radio" name="q6" value="b" />B) Espacios para cambiar rutinas y reinventarte</label>
+        <label><input type="radio" name="q6" value="c" />C) Tiempo de silencio y autocuidado profundo</label>
+        <label><input type="radio" name="q6" value="d" />D) Retos que exijan tu mejor versión cada día</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Entregar</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+
+    function checkAnswers() {
+      const emailText = document.getElementById("email").value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(emailText)) {
+        document.getElementById("result").textContent = "Por favor ingrese un email válido";
+        return;
+      }
+
+
+      const letter_count = {a: 0,b: 0,c: 0,d: 0};
+
+      const answers = {q1: 'b',q2: 'b',q3: 'b',q4: 'b',q5: 'b',q6: 'b'};
+
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === 'a') {
+          letter_count.a = letter_count.a + 1
+        } else if (selected && selected.value === 'b') {
+          letter_count.b = letter_count.b + 1
+        } else if (selected && selected.value === 'c') {
+          letter_count.c = letter_count.c + 1
+        } else if (selected && selected.value === 'd') {
+          letter_count.d = letter_count.d + 1
+        } 
+      }
+      let biggest_name = "";
+      let result = "";
+      let biggest = 0;
+      for (key in letter_count){
+        if(letter_count[key] > biggest){
+                biggest = letter_count[key];
+                biggest_name = key;
+            }
+      }
+      
+      if (biggest_name === 'a'){
+        result = "Crecimiento y Expansión";
+        document.getElementById("whole").innerHTML =
+        `<h1>Resultados del diagnóstico energético 2026</h1>
+        <h2>Crecimiento y Expansión</h2>
+        <p>El año 2026 se presenta como un lienzo abierto para tu desarrollo: sentirás impulso creativo, curiosidad y ganas de aprender. Experimentarás un optimismo que inspira a plantearte metas grandes y audaces. Esta energía te invita a salir de la zona de confort y abrazar nuevos retos con confianza, sabiendo que cada paso te acercará a tu mejor versión.
+        <ul>
+        <li><b>Define metas claras y estrategias.</b> Comienza por visualizar con precisión qué quieres lograr. Para crecer necesitas fijarte una meta, diseñar la mejor estrategia para alcanzarla y concentrarte en ella. Lleva ese plan por escrito y revisa tu progreso con regularidad. </li>
+        <li><b>Conócete a ti mismo.</b> Reflexiona sobre tus fortalezas y debilidades para sacarles provecho. Trabaja el autoconocimiento: evalúa tus valores, motivaciones y áreas de oportunidad para construir sobre lo que ya tienes. Esto te dará una base sólida para crecer de forma auténtica. </li>
+        <li><b>Elabora un plan de acción paso a paso.</b> Desglosa tus objetivos en tareas manejables y fija plazos realistas. Planificar las metas a corto, mediano y largo plazo te mantendrá enfocado. Actúa cada día aunque sea dando pequeños pasos: así evitarás abrumarte y celebrarás cada logro, por pequeño que parezca. </li>
+        </ul>
+        <b>Ejemplo:</b> Imagina una diseñadora gráfica que en 2026 decide ampliar sus servicios. Primero se fija la meta de aprender nuevas herramientas digitales y planifica inscribirse en cursos; luego establece un calendario semanal de estudio y practica con proyectos personales. Poco a poco consolida su portafolio y lanza una campaña de promoción. Al cierre del año, no sólo domina nuevas habilidades sino que su clientela crece y su confianza personal se eleva gracias a la expansión que impulsó.
+        </p>
+        <p><b>Frase motivadora:</b> “Tu potencial se expande con cada meta que te propones.”</p>
+        <p><b>Mantra:</b> <em>Cada día crezco más.</em> </p>
+        `;
+      } else if (biggest_name === 'b') {
+        result = "Transformación y Cambios";
+        document.getElementById("whole").innerHTML =
+        `<h1>Resultados del diagnóstico energético 2026</h1>
+        <h2>Transformación y Cambios</h2>
+        <p>El 2026 será un año de transformación profunda: sentirás la necesidad de soltar lo viejo para dar lugar a lo nuevo. Quizás surja en ti el deseo de reinventarte, cambiar hábitos o seguir un nuevo camino profesional o personal. A pesar de las incógnitas que esto genera, esta energía te impulsa a confiar en el proceso: al abrazar la incertidumbre encontrarás oportunidades para reinventarte.
+        <ul>
+        <li><b>Acoge el cambio con mente abierta.</b> Intenta ver cada cambio no como un obstáculo, sino como el principio de algo mejor. Aceptar el cambio significa buscar activamente el potencial de las nuevas situaciones, lo que conduce a un mayor crecimiento personal y profesional. Practica la gratitud y el mindfulness para adaptarte mejor: agradecer lo que se va te permite recibir con positividad lo que llega. </li>
+        <li><b>Profundiza en ti.</b> Dedica tiempo a la introspección para entender qué debes transformar. Explora tus valores, creencias y prioridades actuales. Establece metas claras sobre qué aspectos de tu vida quieres renovar y por qué. Conocer tus motivaciones internas te dará fuerza durante la transición. </li>
+        <li><b>Planifica la transición.</b> Una vez que tengas claro hacia dónde quieres ir, diseña un plan flexible para llegar ahí. Define pequeños pasos (cursos, rutinas nuevas, cambios en tu entorno) y un calendario para llevarlos a cabo. Prepararte con anticipación reduce la ansiedad que suele acompañar al cambio y te ayuda a mantener el control sobre tu proceso.</li>
+        </ul>
+        <b>Ejemplo:</b> Piensa en alguien que decide reconducir su carrera profesional. Esta persona siente que necesita un cambio de rumbo y, tras reflexionar, elige formarse en un área diferente. Planifica sus estudios por módulos y organiza su presupuesto para cubrirlos. Aunque al principio siente incertidumbre, cada curso completado fortalece su confianza. Al final del año, la transformación es evidente: ahora trabaja en el nuevo campo y ha descubierto un talento que ni siquiera sabía que tenía.
+        </p>
+        <p><b>Frase motivadora:</b> “Cada cambio es la semilla de tu nueva historia.”</p>
+        <p><b>Mantra:</b> <em>Me transformo para renacer.</em> </p>
+        `;
+      } else if (biggest_name === 'c') {
+        result = "Protección y Reflexión";
+        document.getElementById("whole").innerHTML =
+        `<h1>Resultados del diagnóstico energético 2026</h1>
+        <h2>Protección y Reflexión</h2>
+        <p>En 2026 este perfil energético se caracteriza por un ritmo más pausado y cuidadoso. Será un año para resguardarte, escuchar tus necesidades internas y recargarte. Este tiempo de introspección y autocuidado te brinda claridad: al tomarte tiempo para reflexionar podrás proteger tu salud mental y emocional. En lugar de ir hacia afuera, tu enfoque estará en cultivar tu mundo interno y rodearte de un ambiente seguro.
+        <ul>
+        <li><b>Practica el autocuidado.</b> Haz una pausa para atender tus necesidades físicas y emocionales. Como advierten especialistas, no debes “dejarte para el último”: dedica tiempo regularmente a descansar, meditar o hacer ejercicio. Escuchar tus propias señales (cansancio, estrés, emociones) es esencial para recargar energías. Recuerda que mereces bienestar: cuidar de ti mismo te fortalece para cualquier cosa que venga después.</li>
+        <li><b>Reflexiona sobre el pasado.</b> Utiliza esta etapa para evaluar tu historia reciente: celebra tus éxitos y aprende de lo que no salió bien. El final del año invita a la introspección: al aprovechar este período de reflexión puedes reconocer tus aciertos y áreas de mejora. Acepta los resultados pasados sin culparte y decide con serenidad qué cambiar para adelante.</li>
+        <li><b>Define límites y rutinas sanas.</b> Planea tu día de forma que incluyas pausas y actividades reparadoras: por ejemplo, horarios regulares de sueño, momentos de desconexión digital o práctica de hobbies. Al organizar así tu tiempo, protegerás tu energía diaria. Este orden interno refuerza la sensación de equilibrio; como dicen los expertos, aprovechar tus experiencias pasadas te ayuda a “construir resiliencia mental” para el futuro.</li>
+        </ul>
+        <b>Ejemplo:</b> Imagina una enfermera que tras años de trabajo intenso decide hacer de 2026 su año de equilibrio. Establece rutinas más estrictas: medita 10 minutos cada mañana, sale a caminar al aire libre varias veces a la semana y se niega a llevar trabajo a casa. También reflexiona sobre su vocación: decide tomar cursos de actualización para sentirse más segura en su empleo. Al final del año, no solo recupera energía, sino que reafirma su propósito profesional y se siente más protegida emocionalmente.
+        </p>
+        <p><b>Frase motivadora:</b> “Cuidarme hoy es la fuerza que necesitaré mañana.”</p>
+        <p><b>Mantra:</b><em> Estoy en paz conmigo mismo.</em> </p>
+        `;
+      } else if (biggest_name === 'd') {
+        result = "Desafío y Crecimiento Personal";
+        document.getElementById("whole").innerHTML =
+        `<h1>Resultados del diagnóstico energético 2026</h1>
+        <h2>Desafío y Crecimiento Personal</h2>
+        <p>El perfil de Desafío te impulsa a superar límites y probar tu fortaleza. En 2026 experimentarás circunstancias que te sacarán de la comodidad: proyectos exigentes, competencias o adversidades personales. Aunque serán momentos de presión, estos desafíos te enseñarán sobre tu resistencia interior. La energía asociada te anima a perseverar: cada obstáculo será una oportunidad para descubrir tu capacidad de adaptación y crecer como persona.
+        <ul>
+        <li><b>Enfócate en la acción y la resiliencia.</b> Ante cada reto, recuerda que está bien equivocarse. Pocas cosas se consiguen a la primera... No pasa nada si te caes, el único problema es no levantarte. Cada vez que enfrentes un tropiezo, párate con más ánimo. Mantén la constancia: avanza con pequeños pasos y no abandones al primer contratiempo.</li>
+        <li><b>Descubre tu fortaleza interior.</b> Utiliza el desafío para conocerte mejor. Cada obstáculo revelará cuáles son tus recursos y talentos ocultos. Las experiencias duras potencian una mentalidad resiliente y positiva. Confía en que eres capaz de más de lo que imaginas: recuerda que los desafíos son la prueba de que estás avanzando. Este conocimiento de ti mismo reforzará tu carácter.</li>
+        <li><b>Establece micro-metas para avanzar.</b> Divide grandes desafíos en tareas pequeñas y celebrables. Al proponerte mini-retos (como aprender una técnica nueva o mejorar un hábito a la vez) generarás victorias constantes. Esto crea “improntas positivas” en tu mente que refuerzan tu avance. Así, paso a paso, cada pequeña conquista te prepara para vencer obstáculos mayores con confianza.</li>
+        </ul>
+        <b>Ejemplo:</b> Piensa en un empresario joven que en 2026 enfrenta varios reveses comerciales. Cada vez que pierde un cliente o un proyecto, en lugar de rendirse se propone metas menores: mejorar la presentación de su negocio, pedir retroalimentación honesta o invertir en capacitación. Con cada objetivo cumplido, construye seguridad. Al final del año, gracias a esa actitud desafiante, no solo recupera su cartera de clientes, sino que demuestra que ha aprendido a sobreponerse a la adversidad, reforzando así su crecimiento personal.
+        </p>
+        <p><b>Frase motivadora:</b> “Cada desafío que enfrentas te hace más fuerte.”</p>
+        <p><b>Mantra:</b><em> Soy más fuerte que el reto.</em> </p>
+        `;
+      }
+
+
+      // Send email and result to Google Sheets
+      fetch("https://script.google.com/macros/s/AKfycbwFMXWcvmCB2-u4n3y9AuUufiNMX8iOJzlKdzYX2dlkvqSxuysLFSBD8FNgOCmwPAEi/exec", {
+        method: "POST",
+        mode: "no-cors", 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: emailText, user_result : result })
+      });
+
+      document.getElementById("whole").scrollIntoView();
+
+      
+    }
+  </script>
+
+</body>
+</html>
